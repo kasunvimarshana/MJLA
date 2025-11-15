@@ -43,7 +43,7 @@
                         <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-primary-600">
                             {{ __('messages.nav.about') }}
                         </a>
-                        <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-primary-600">
+                        <a href="{{ route('contact.index') }}" class="inline-flex items-center px-1 pt-1 text-sm font-medium {{ request()->is('contact*') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600' }}">
                             {{ __('messages.nav.contact') }}
                         </a>
                     </div>
@@ -102,7 +102,7 @@
                 <a href="#" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300">
                     {{ __('messages.nav.about') }}
                 </a>
-                <a href="#" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300">
+                <a href="{{ route('contact.index') }}" class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium {{ request()->is('contact*') ? 'border-primary-600 text-primary-600 bg-primary-50' : 'border-transparent text-gray-700 hover:bg-gray-50 hover:border-gray-300' }}">
                     {{ __('messages.nav.contact') }}
                 </a>
             </div>
@@ -204,7 +204,7 @@
                         <li><a href="{{ route('courses.index') }}" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.courses') }}</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.visa_services') }}</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.about') }}</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.contact') }}</a></li>
+                        <li><a href="{{ route('contact.index') }}" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.contact') }}</a></li>
                     </ul>
                 </div>
                 

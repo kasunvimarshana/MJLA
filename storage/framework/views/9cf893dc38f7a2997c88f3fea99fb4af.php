@@ -47,7 +47,7 @@
                             <?php echo e(__('messages.nav.about')); ?>
 
                         </a>
-                        <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-primary-600">
+                        <a href="<?php echo e(route('contact.index')); ?>" class="inline-flex items-center px-1 pt-1 text-sm font-medium <?php echo e(request()->is('contact*') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600'); ?>">
                             <?php echo e(__('messages.nav.contact')); ?>
 
                         </a>
@@ -111,7 +111,7 @@
                     <?php echo e(__('messages.nav.about')); ?>
 
                 </a>
-                <a href="#" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300">
+                <a href="<?php echo e(route('contact.index')); ?>" class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium <?php echo e(request()->is('contact*') ? 'border-primary-600 text-primary-600 bg-primary-50' : 'border-transparent text-gray-700 hover:bg-gray-50 hover:border-gray-300'); ?>">
                     <?php echo e(__('messages.nav.contact')); ?>
 
                 </a>
@@ -215,7 +215,7 @@
                         <li><a href="<?php echo e(route('courses.index')); ?>" class="text-gray-300 hover:text-primary-400 transition-colors"><?php echo e(__('messages.nav.courses')); ?></a></li>
                         <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors"><?php echo e(__('messages.nav.visa_services')); ?></a></li>
                         <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors"><?php echo e(__('messages.nav.about')); ?></a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors"><?php echo e(__('messages.nav.contact')); ?></a></li>
+                        <li><a href="<?php echo e(route('contact.index')); ?>" class="text-gray-300 hover:text-primary-400 transition-colors"><?php echo e(__('messages.nav.contact')); ?></a></li>
                     </ul>
                 </div>
                 

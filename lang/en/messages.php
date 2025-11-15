@@ -111,6 +111,7 @@ return [
         'invalid_phone' => 'Please enter a valid phone number',
         'success' => 'Your form has been submitted successfully',
         'error' => 'An error occurred. Please try again',
+        'rate_limit' => 'Too many attempts. Please try again in :seconds seconds',
     ],
 
     // Auth
