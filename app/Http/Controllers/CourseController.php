@@ -12,8 +12,6 @@ class CourseController extends Controller
 {
     /**
      * CourseController constructor.
-     *
-     * @param CourseService $courseService
      */
     public function __construct(
         protected CourseService $courseService
@@ -25,7 +23,7 @@ class CourseController extends Controller
     public function index(): View
     {
         $courses = $this->courseService->getPaginated(12);
-        
+
         return view('courses.index', compact('courses'));
     }
 
@@ -56,7 +54,7 @@ class CourseController extends Controller
     {
         $course = $this->courseService->getBySlug($slug);
 
-        if (!$course) {
+        if (! $course) {
             abort(404);
         }
 
@@ -70,7 +68,7 @@ class CourseController extends Controller
     {
         $course = $this->courseService->getBySlug($slug);
 
-        if (!$course) {
+        if (! $course) {
             abort(404);
         }
 
@@ -84,7 +82,7 @@ class CourseController extends Controller
     {
         $course = $this->courseService->getBySlug($slug);
 
-        if (!$course) {
+        if (! $course) {
             abort(404);
         }
 
@@ -102,7 +100,7 @@ class CourseController extends Controller
     {
         $course = $this->courseService->getBySlug($slug);
 
-        if (!$course) {
+        if (! $course) {
             abort(404);
         }
 

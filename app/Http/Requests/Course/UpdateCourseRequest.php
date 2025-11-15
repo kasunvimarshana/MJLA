@@ -22,10 +22,10 @@ class UpdateCourseRequest extends FormRequest
     public function rules(): array
     {
         $courseId = $this->route('course')->id ?? $this->route('id');
-        
+
         return [
             'title' => ['required', 'string', 'max:255'],
-            'slug' => ['nullable', 'string', 'max:255', 'unique:courses,slug,' . $courseId],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:courses,slug,'.$courseId],
             'description' => ['nullable', 'string'],
             'objectives' => ['nullable', 'string'],
             'level' => ['required', 'string', 'in:beginner,intermediate,advanced'],

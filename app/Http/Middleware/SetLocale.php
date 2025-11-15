@@ -17,20 +17,20 @@ class SetLocale
     {
         // Get locale from session, or fallback to browser preference
         $locale = session('locale');
-        
-        if (!$locale) {
+
+        if (! $locale) {
             // Try to get from Accept-Language header
             $locale = $request->getPreferredLanguage(['en', 'si', 'ja']) ?? config('app.locale');
         }
-        
+
         // Validate locale
-        if (!in_array($locale, ['en', 'si', 'ja'])) {
+        if (! in_array($locale, ['en', 'si', 'ja'])) {
             $locale = config('app.locale');
         }
-        
+
         // Set application locale
         app()->setLocale($locale);
-        
+
         return $next($request);
     }
 }

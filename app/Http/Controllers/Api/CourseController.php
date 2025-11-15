@@ -12,8 +12,6 @@ class CourseController extends Controller
 {
     /**
      * CourseController constructor.
-     *
-     * @param CourseService $courseService
      */
     public function __construct(
         protected CourseService $courseService
@@ -25,7 +23,7 @@ class CourseController extends Controller
     public function index(): JsonResponse
     {
         $courses = $this->courseService->getActiveCourses();
-        
+
         return response()->json([
             'success' => true,
             'data' => $courses,
@@ -51,9 +49,9 @@ class CourseController extends Controller
      */
     public function show(string $id): JsonResponse
     {
-        $course = $this->courseService->getById((int)$id);
+        $course = $this->courseService->getById((int) $id);
 
-        if (!$course) {
+        if (! $course) {
             return response()->json([
                 'success' => false,
                 'message' => 'Course not found.',
@@ -71,7 +69,7 @@ class CourseController extends Controller
      */
     public function update(UpdateCourseRequest $request, string $id): JsonResponse
     {
-        $course = $this->courseService->update((int)$id, $request->validated());
+        $course = $this->courseService->update((int) $id, $request->validated());
 
         return response()->json([
             'success' => true,
@@ -85,7 +83,7 @@ class CourseController extends Controller
      */
     public function destroy(string $id): JsonResponse
     {
-        $this->courseService->delete((int)$id);
+        $this->courseService->delete((int) $id);
 
         return response()->json([
             'success' => true,

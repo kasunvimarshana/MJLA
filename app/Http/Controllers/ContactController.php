@@ -24,12 +24,13 @@ class ContactController extends Controller
     public function store(ContactFormRequest $request)
     {
         // Rate limiting - allow 3 submissions per hour per IP
-        $key = 'contact-form:' . $request->ip();
-        
+        $key = 'contact-form:'.$request->ip();
+
         if (RateLimiter::tooManyAttempts($key, 3)) {
             $seconds = RateLimiter::availableIn($key);
+
             return back()->withErrors([
-                'rate_limit' => __('messages.forms.rate_limit', ['seconds' => $seconds])
+                'rate_limit' => __('messages.forms.rate_limit', ['seconds' => $seconds]),
             ])->withInput();
         }
 
@@ -52,11 +53,10 @@ class ContactController extends Controller
                 ->send(new ContactFormSubmitted($contact));
         } catch (\Exception $e) {
             // Log error but don't fail the request
-            logger()->error('Failed to send contact form email: ' . $e->getMessage());
+            logger()->error('Failed to send contact form email: '.$e->getMessage());
         }
 
         return redirect()->route('contact.index')
             ->with('success', __('messages.forms.success'));
     }
 }
-
