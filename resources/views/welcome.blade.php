@@ -3,24 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
     <title>{{ config('app.name') }}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#fef2f2',
-                            500: '#ef4444',
-                            600: '#dc2626',
-                            700: '#b91c1c',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Majime Japanese Language Academy - Master the Japanese language with expert instruction and comprehensive courses">
+    <meta name="keywords" content="Japanese language, Japanese courses, Learn Japanese, Japanese Academy, MJLA">
+    
+    <!-- Vite Assets -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="antialiased bg-gray-50">
     <div class="min-h-screen flex items-center justify-center px-4">

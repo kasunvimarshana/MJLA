@@ -131,7 +131,7 @@ Service Layer → Repository Layer → Controller Layer → Views
 - PHP 8.2 or higher
 - Composer
 - SQLite/MySQL/PostgreSQL
-- Node.js & NPM (optional, for asset compilation)
+- Node.js & NPM (required for asset compilation)
 
 ### Setup
 
@@ -144,6 +144,7 @@ cd MJLA
 2. **Install dependencies**
 ```bash
 composer install
+npm install
 ```
 
 3. **Environment configuration**
@@ -161,7 +162,12 @@ touch database/database.sqlite
 php artisan migrate
 ```
 
-5. **Start development server**
+5. **Build frontend assets**
+```bash
+npm run build
+```
+
+6. **Start development server**
 ```bash
 php artisan serve
 ```

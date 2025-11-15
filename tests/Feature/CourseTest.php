@@ -35,7 +35,7 @@ class CourseTest extends TestCase
             'title' => 'Beginner Japanese Course',
             'level' => 'beginner',
         ]);
-        
+
         $this->assertNotNull($course->slug);
     }
 

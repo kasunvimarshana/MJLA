@@ -4,6 +4,9 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage/logs/
+/storage/framework/views/*.php
+/database/database.sqlite
 /vendor
 .env
 .env.backup

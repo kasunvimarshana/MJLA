@@ -3,15 +3,12 @@
 namespace App\Repositories;
 
 use App\Models\Course;
-use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Collection;
 
 class CourseRepository extends BaseRepository
 {
     /**
      * CourseRepository constructor.
-     *
-     * @param Course $model
      */
     public function __construct(Course $model)
     {
@@ -20,8 +17,6 @@ class CourseRepository extends BaseRepository
 
     /**
      * Get active courses
-     *
-     * @return Collection
      */
     public function getActive(): Collection
     {
@@ -30,8 +25,6 @@ class CourseRepository extends BaseRepository
 
     /**
      * Get featured courses
-     *
-     * @return Collection
      */
     public function getFeatured(): Collection
     {
@@ -40,9 +33,6 @@ class CourseRepository extends BaseRepository
 
     /**
      * Get courses by level
-     *
-     * @param string $level
-     * @return Collection
      */
     public function getByLevel(string $level): Collection
     {
@@ -51,9 +41,6 @@ class CourseRepository extends BaseRepository
 
     /**
      * Find course by slug
-     *
-     * @param string $slug
-     * @return Course|null
      */
     public function findBySlug(string $slug): ?Course
     {

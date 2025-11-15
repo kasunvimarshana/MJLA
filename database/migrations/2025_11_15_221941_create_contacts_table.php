@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('status')->default('new'); // new, read, replied
             $table->timestamp('replied_at')->nullable();
             $table->timestamps();
-            
+
             $table->index(['status', 'created_at']);
         });
     }

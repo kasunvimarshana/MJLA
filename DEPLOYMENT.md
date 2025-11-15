@@ -8,7 +8,7 @@
 - Composer 2.x
 - MySQL 8.0+ or PostgreSQL 13+ or SQLite
 - Nginx or Apache
-- Node.js 16+ (optional, for asset compilation)
+- Node.js 18+ & NPM (required for asset compilation)
 - Redis (optional, for caching and queues)
 - Supervisor (for queue workers)
 
@@ -71,7 +71,14 @@ sudo chown -R www-data:www-data .
 
 #### Install Dependencies
 ```bash
+# Install PHP dependencies
 composer install --no-dev --optimize-autoloader
+
+# Install Node.js dependencies
+npm install
+
+# Build frontend assets
+npm run build
 ```
 
 #### Environment Configuration

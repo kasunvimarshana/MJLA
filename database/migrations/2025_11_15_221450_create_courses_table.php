@@ -30,7 +30,7 @@ return new class extends Migration
             $table->json('meta')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            
+
             $table->index(['is_active', 'is_featured']);
             $table->index('start_date');
         });
