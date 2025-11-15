@@ -2,6 +2,9 @@
 
 Production-ready, LTS Laravel application for Majime Japanese Language Academy with dynamic mobile-first front-end, secure modular admin CMS, multilingual support, SEO-friendly content, role-based access, modular MVC architecture, Blade/Tailwind UI, queues, caching, tests, and CI/CD pipelines.
 
+## Quick Links
+📚 **[Installation Guide](#installation)** | 🏗️ **[Architecture](ARCHITECTURE.md)** | 🚀 **[Deployment](DEPLOYMENT.md)** | 🆘 **[Help & Troubleshooting](HELP.md)** | 🤝 **[Contributing](CONTRIBUTING.md)**
+
 ## Features
 
 ### Core Architecture
@@ -339,16 +342,51 @@ If you discover any security issues, please email security@example.com instead o
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Documentation
+
+### Core Documentation
+- **[README.md](README.md)** - Project overview and quick start
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Technical architecture and design patterns
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Deployment guide and production setup
+- **[HELP.md](HELP.md)** - Troubleshooting and FAQ
+
+### Contributing
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute to this project
+- **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** - Community guidelines and standards
+
 ## Support
 
-For support, email support@mjla.edu or visit our documentation.
+Need help? We're here to assist you!
+
+### Common Issues
+Check our **[HELP.md](HELP.md)** guide for solutions to common problems:
+- Installation issues
+- Database connection problems
+- Asset compilation errors
+- Permission issues
+- And more...
+
+### Getting Help
+- **Documentation**: Start with our comprehensive [HELP.md](HELP.md) guide
+- **GitHub Issues**: [Report bugs or request features](https://github.com/kasunvimarshana/MJLA/issues)
+- **GitHub Discussions**: [Ask questions or share ideas](https://github.com/kasunvimarshana/MJLA/discussions)
+- **Email**: support@mjla.edu
+- **Phone**: +94 XX XXX XXXX
+
+### For Contributors
+Want to contribute? Please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide and follow our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Acknowledgments
 
 - Laravel Framework
 - Tailwind CSS
+- Alpine.js
 - PHP Community
-- Contributors
+- All our Contributors
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
