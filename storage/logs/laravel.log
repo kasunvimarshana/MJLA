@@ -1,0 +1,26 @@
+[2025-11-15 22:12:02] local.ERROR: require(/home/runner/work/MJLA/MJLA/bootstrap/providers.php): Failed to open stream: Success {"exception":"[object] (ErrorException(code: 0): require(/home/runner/work/MJLA/MJLA/bootstrap/providers.php): Failed to open stream: Success at /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php:49)
+[stacktrace]
+#0 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(49): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(49): require('...')
+#3 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(34): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->mergeAdditionalProviders()
+#4 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#5 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
+#6 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 /home/runner/work/MJLA/MJLA/artisan(11): Illuminate\\Foundation\\Application->handleCommand()
+#9 {main}
+"} 
+[2025-11-15 22:12:13] local.ERROR: require(/home/runner/work/MJLA/MJLA/bootstrap/providers.php): Failed to open stream: Success {"exception":"[object] (ErrorException(code: 0): require(/home/runner/work/MJLA/MJLA/bootstrap/providers.php): Failed to open stream: Success at /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php:49)
+[stacktrace]
+#0 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(49): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(49): require('...')
+#3 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(34): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->mergeAdditionalProviders()
+#4 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#5 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
+#6 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 /home/runner/work/MJLA/MJLA/artisan(11): Illuminate\\Foundation\\Application->handleCommand()
+#9 {main}
+"} 
