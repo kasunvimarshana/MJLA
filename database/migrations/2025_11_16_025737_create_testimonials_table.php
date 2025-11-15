@@ -11,27 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
-            $table->string('position');
-            $table->string('department')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->text('bio')->nullable();
-            $table->text('qualifications')->nullable();
-            $table->text('specialization')->nullable();
+            $table->string('position')->nullable();
+            $table->string('company')->nullable();
+            $table->text('content');
             $table->string('photo')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->integer('rating')->default(5); // 1-5 stars
+            $table->string('course')->nullable();
+            $table->boolean('is_published')->default(false);
             $table->boolean('is_featured')->default(false);
             $table->integer('order')->default(0);
-            $table->json('social_links')->nullable();
             $table->json('meta')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['is_active', 'department']);
+            $table->index(['is_published', 'is_featured']);
         });
     }
 
@@ -40,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('testimonials');
     }
 };
