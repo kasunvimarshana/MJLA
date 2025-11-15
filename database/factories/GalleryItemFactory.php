@@ -16,8 +16,17 @@ class GalleryItemFactory extends Factory
      */
     public function definition(): array
     {
+        $types = ['image', 'video'];
+        $categories = ['general', 'events', 'classrooms', 'cultural', 'students'];
+        
         return [
-            //
+            'title' => fake()->sentence(),
+            'description' => fake()->optional()->paragraph(),
+            'type' => fake()->randomElement($types),
+            'category' => fake()->randomElement($categories),
+            'is_published' => fake()->boolean(85),
+            'is_featured' => fake()->boolean(25),
+            'order' => fake()->numberBetween(0, 100),
         ];
     }
 }

@@ -17,7 +17,15 @@ class TestimonialFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'position' => fake()->jobTitle(),
+            'company' => fake()->optional()->company(),
+            'content' => fake()->paragraph(4),
+            'rating' => fake()->numberBetween(4, 5),
+            'course' => fake()->optional()->randomElement(['N5 Course', 'N4 Course', 'N3 Course', 'Business Japanese']),
+            'is_published' => fake()->boolean(80),
+            'is_featured' => fake()->boolean(20),
+            'order' => fake()->numberBetween(0, 100),
         ];
     }
 }
