@@ -32,19 +32,19 @@
                     <!-- Desktop Navigation Links -->
                     <div class="hidden md:ml-6 md:flex md:space-x-8">
                         <a href="{{ url('/') }}" class="inline-flex items-center px-1 pt-1 text-sm font-medium {{ request()->is('/') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600' }}">
-                            Home
+                            {{ __('messages.nav.home') }}
                         </a>
                         <a href="{{ route('courses.index') }}" class="inline-flex items-center px-1 pt-1 text-sm font-medium {{ request()->is('courses*') ? 'text-primary-600 border-b-2 border-primary-600' : 'text-gray-700 hover:text-primary-600' }}">
-                            Courses
+                            {{ __('messages.nav.courses') }}
                         </a>
                         <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-primary-600">
-                            Visa Services
+                            {{ __('messages.nav.visa_services') }}
                         </a>
                         <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-primary-600">
-                            About
+                            {{ __('messages.nav.about') }}
                         </a>
                         <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-primary-600">
-                            Contact
+                            {{ __('messages.nav.contact') }}
                         </a>
                     </div>
                 </div>
@@ -91,19 +91,19 @@
              style="display: none;">
             <div class="pt-2 pb-3 space-y-1 bg-white border-t">
                 <a href="{{ url('/') }}" class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium {{ request()->is('/') ? 'border-primary-600 text-primary-600 bg-primary-50' : 'border-transparent text-gray-700 hover:bg-gray-50 hover:border-gray-300' }}">
-                    Home
+                    {{ __('messages.nav.home') }}
                 </a>
                 <a href="{{ route('courses.index') }}" class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium {{ request()->is('courses*') ? 'border-primary-600 text-primary-600 bg-primary-50' : 'border-transparent text-gray-700 hover:bg-gray-50 hover:border-gray-300' }}">
-                    Courses
+                    {{ __('messages.nav.courses') }}
                 </a>
                 <a href="#" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300">
-                    Visa Services
+                    {{ __('messages.nav.visa_services') }}
                 </a>
                 <a href="#" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300">
-                    About
+                    {{ __('messages.nav.about') }}
                 </a>
                 <a href="#" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300">
-                    Contact
+                    {{ __('messages.nav.contact') }}
                 </a>
             </div>
             <!-- Mobile Language Switcher -->
@@ -181,7 +181,7 @@
                 <div class="col-span-1 md:col-span-2">
                     <h3 class="text-2xl font-bold font-serif text-primary-400 mb-4">MJLA</h3>
                     <p class="text-gray-300 mb-4">
-                        Majime Japanese Language Academy - Supporting Sri Lankans aspiring to study, work, and build their future in Japan.
+                        {{ __('messages.footer.about') }}
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">
@@ -198,19 +198,19 @@
                 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ __('messages.footer.quick_links') }}</h4>
                     <ul class="space-y-2">
-                        <li><a href="{{ url('/') }}" class="text-gray-300 hover:text-primary-400 transition-colors">Home</a></li>
-                        <li><a href="{{ route('courses.index') }}" class="text-gray-300 hover:text-primary-400 transition-colors">Courses</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">Visa Services</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">Contact</a></li>
+                        <li><a href="{{ url('/') }}" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.home') }}</a></li>
+                        <li><a href="{{ route('courses.index') }}" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.courses') }}</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.visa_services') }}</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.about') }}</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors">{{ __('messages.nav.contact') }}</a></li>
                     </ul>
                 </div>
                 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ __('messages.footer.contact_info') }}</h4>
                     <ul class="space-y-2 text-gray-300">
                         <li class="flex items-start">
                             <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,9 +237,9 @@
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center">
                 <p class="text-gray-400 text-sm">
-                    © {{ date('Y') }} {{ config('app.name') }}. All rights reserved. | 
-                    <a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a> | 
-                    <a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a>
+                    © {{ date('Y') }} {{ config('app.name') }}. {{ __('messages.footer.all_rights_reserved') }} | 
+                    <a href="#" class="hover:text-primary-400 transition-colors">{{ __('messages.footer.privacy_policy') }}</a> | 
+                    <a href="#" class="hover:text-primary-400 transition-colors">{{ __('messages.footer.terms_of_service') }}</a>
                 </p>
             </div>
         </div>

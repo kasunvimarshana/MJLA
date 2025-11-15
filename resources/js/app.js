@@ -163,20 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Language Switcher
 window.switchLanguage = function(locale) {
-    // Get current path
-    const path = window.location.pathname;
-    const segments = path.split('/').filter(s => s !== '');
-    
-    // Check if first segment is a locale
-    const locales = ['en', 'si', 'ja'];
-    if (locales.includes(segments[0])) {
-        segments[0] = locale;
-    } else {
-        segments.unshift(locale);
-    }
-    
-    // Redirect to new path
-    window.location.href = '/' + segments.join('/');
+    // Use Laravel route for locale switching
+    window.location.href = `/locale/${locale}`;
 };
 
 // Export utilities
