@@ -24,3 +24,19 @@
 #8 /home/runner/work/MJLA/MJLA/artisan(11): Illuminate\\Foundation\\Application->handleCommand()
 #9 {main}
 "} 
+[2025-11-15 22:24:04] local.ERROR: The "--compact" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--compact\" option does not exist. at /home/runner/work/MJLA/MJLA/vendor/symfony/console/Input/ArgvInput.php:226)
+[stacktrace]
+#0 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Input/ArgvInput.php(155): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption()
+#1 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Input/ArgvInput.php(88): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption()
+#2 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Input/ArgvInput.php(77): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken()
+#3 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Input/Input.php(53): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Command/Command.php(276): Symfony\\Component\\Console\\Input\\Input->bind()
+#5 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#6 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Application.php(1073): Illuminate\\Console\\Command->run()
+#7 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+#8 /home/runner/work/MJLA/MJLA/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+#9 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+#10 /home/runner/work/MJLA/MJLA/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
+#11 /home/runner/work/MJLA/MJLA/artisan(11): Illuminate\\Foundation\\Application->handleCommand()
+#12 {main}
+"} 
