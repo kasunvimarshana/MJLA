@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreConsultationRequestRequest;
+use App\Mail\ConsultationRequestSubmitted;
 use App\Models\ConsultationRequest;
 use App\Models\VisaService;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class ConsultationRequestController extends Controller
@@ -37,7 +39,12 @@ class ConsultationRequestController extends Controller
             'status' => 'pending',
         ]);
 
-        // TODO: Send notification email to admin and applicant
+        // Load the visa service relationship for the email
+        $consultationRequest->load('visaService');
+
+        // Send notification email to admin
+        $adminEmail = config('mail.admin_email', config('mail.from.address'));
+        Mail::to($adminEmail)->send(new ConsultationRequestSubmitted($consultationRequest));
 
         $redirectRoute = $consultationRequest->visa_service_id
             ? route('visa-services.show', $consultationRequest->visaService->slug)
