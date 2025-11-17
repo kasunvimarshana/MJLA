@@ -28,8 +28,8 @@ class NewsController extends Controller
     public function show(string $slug): View
     {
         $newsItem = $this->newsService->getRepository()->findBySlug($slug);
-        
-        if (!$newsItem) {
+
+        if (! $newsItem) {
             abort(404);
         }
 

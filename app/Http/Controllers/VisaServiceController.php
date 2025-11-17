@@ -28,8 +28,8 @@ class VisaServiceController extends Controller
     public function show(string $slug): View
     {
         $service = $this->visaServiceService->getRepository()->findBySlug($slug);
-        
-        if (!$service) {
+
+        if (! $service) {
             abort(404);
         }
 

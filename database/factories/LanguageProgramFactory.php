@@ -17,9 +17,9 @@ class LanguageProgramFactory extends Factory
     public function definition(): array
     {
         $levels = ['all', 'beginner', 'intermediate', 'advanced'];
-        
+
         return [
-            'name' => fake()->words(3, true) . ' Program',
+            'name' => fake()->words(3, true).' Program',
             'description' => fake()->paragraphs(3, true),
             'level' => fake()->randomElement($levels),
             'curriculum' => fake()->paragraphs(4, true),

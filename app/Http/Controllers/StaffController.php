@@ -28,8 +28,8 @@ class StaffController extends Controller
     public function show(string $slug): View
     {
         $staffMember = $this->staffService->getRepository()->findBySlug($slug);
-        
-        if (!$staffMember) {
+
+        if (! $staffMember) {
             abort(404);
         }
 

@@ -17,7 +17,7 @@ class StaffFactory extends Factory
     public function definition(): array
     {
         $departments = ['Administration', 'Teaching', 'Student Services', 'Visa Support'];
-        
+
         return [
             'name' => fake()->name(),
             'position' => fake()->jobTitle(),

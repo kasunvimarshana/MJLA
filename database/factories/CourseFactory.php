@@ -17,7 +17,7 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         $levels = ['beginner', 'intermediate', 'advanced'];
-        
+
         return [
             'title' => fake()->sentence(3),
             'description' => fake()->paragraphs(3, true),
