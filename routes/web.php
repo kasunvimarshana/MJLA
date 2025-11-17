@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConsultationRequestController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollmentController;
@@ -24,13 +25,23 @@ Route::get('/courses', [CourseController::class, 'index'])->name('courses.index'
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 
 Route::get('/enrollments/{slug}', [EnrollmentController::class, 'create'])->name('enrollments.create');
-Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollments.store');
+Route::post('/enrollments', [EnrollmentController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('enrollments.store');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('contact.store');
 
 Route::get('/visa-services', [VisaServiceController::class, 'index'])->name('visa-services.index');
 Route::get('/visa-services/{slug}', [VisaServiceController::class, 'show'])->name('visa-services.show');
+
+Route::get('/consultation-requests', [ConsultationRequestController::class, 'create'])->name('consultation-requests.create');
+Route::get('/consultation-requests/{slug}', [ConsultationRequestController::class, 'create'])->name('consultation-requests.create.service');
+Route::post('/consultation-requests', [ConsultationRequestController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('consultation-requests.store');
 
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 
