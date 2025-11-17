@@ -39,8 +39,13 @@ class EnrollmentController extends Controller
         $enrollment->load('course');
 
         // Send notification email to admin
-        $adminEmail = config('mail.admin_email', config('mail.from.address'));
-        Mail::to($adminEmail)->send(new EnrollmentSubmitted($enrollment));
+        try {
+            $adminEmail = config('mail.admin_email', config('mail.from.address'));
+            Mail::to($adminEmail)->send(new EnrollmentSubmitted($enrollment));
+        } catch (\Exception $e) {
+            // Log error but don't fail the request
+            logger()->error('Failed to send enrollment notification email: '.$e->getMessage());
+        }
 
         return redirect()
             ->route('courses.show', $enrollment->course->slug)
