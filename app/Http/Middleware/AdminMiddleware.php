@@ -15,11 +15,11 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check()) {
+        if (! auth()->check()) {
             return redirect()->route('login');
         }
 
-        if (!auth()->user()->hasPermission('dashboard.access')) {
+        if (! auth()->user()->hasPermission('dashboard.access')) {
             abort(403, 'Unauthorized access to admin area.');
         }
 

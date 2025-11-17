@@ -10,7 +10,6 @@ use App\Models\Course;
 use App\Models\News;
 use App\Models\Staff;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -35,4 +34,3 @@ class DashboardController extends Controller
         return view('admin.dashboard', compact('stats', 'recentContacts', 'recentAdmissions'));
     }
 }
-
