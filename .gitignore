@@ -5,12 +5,16 @@
 /public/storage
 /storage/*.key
 /storage/logs/
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
 /storage/framework/views/*.php
 /database/database.sqlite
 /vendor
 .env
 .env.backup
 .env.production
+.env.*.php
+.env.php
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -20,3 +24,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
