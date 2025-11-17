@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ConsultationRequestController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\NewsController;
@@ -23,6 +25,14 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store']
 // Course routes
 Route::resource('courses', CourseController::class)
     ->parameters(['courses' => 'slug']);
+
+// Enrollment routes
+Route::get('/courses/{slug}/enroll', [EnrollmentController::class, 'create'])->name('enrollments.create');
+Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollments.store')->middleware('throttle:3,60');
+
+// Consultation request routes
+Route::get('/consultation-request/{slug?}', [ConsultationRequestController::class, 'create'])->name('consultation-requests.create');
+Route::post('/consultation-requests', [ConsultationRequestController::class, 'store'])->name('consultation-requests.store')->middleware('throttle:3,60');
 
 // Testimonials routes
 Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
