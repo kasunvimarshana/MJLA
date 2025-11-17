@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEnrollmentRequest;
+use App\Mail\EnrollmentSubmitted;
 use App\Models\Course;
 use App\Models\Enrollment;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class EnrollmentController extends Controller
@@ -33,7 +35,12 @@ class EnrollmentController extends Controller
             'enrollment_date' => now(),
         ]);
 
-        // TODO: Send notification email to admin and student
+        // Load the course relationship for the email
+        $enrollment->load('course');
+
+        // Send notification email to admin
+        $adminEmail = config('mail.admin_email', config('mail.from.address'));
+        Mail::to($adminEmail)->send(new EnrollmentSubmitted($enrollment));
 
         return redirect()
             ->route('courses.show', $enrollment->course->slug)
