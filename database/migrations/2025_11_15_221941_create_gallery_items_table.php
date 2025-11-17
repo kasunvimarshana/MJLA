@@ -13,7 +13,23 @@ return new class extends Migration
     {
         Schema::create('gallery_items', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('description')->nullable();
+            $table->string('type')->default('image'); // image, video
+            $table->string('file_path')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('category')->default('general');
+            $table->string('video_url')->nullable(); // For YouTube/Vimeo
+            $table->boolean('is_published')->default(true);
+            $table->boolean('is_featured')->default(false);
+            $table->integer('order')->default(0);
+            $table->json('meta')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->index(['is_published', 'type']);
+            $table->index('category');
         });
     }
 

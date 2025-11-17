@@ -11,27 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('language_programs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('position');
-            $table->string('department')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->text('bio')->nullable();
-            $table->text('qualifications')->nullable();
-            $table->text('specialization')->nullable();
-            $table->string('photo')->nullable();
+            $table->text('description')->nullable();
+            $table->string('level')->default('all'); // all, beginner, intermediate, advanced
+            $table->text('curriculum')->nullable();
+            $table->integer('duration_months')->nullable();
+            $table->decimal('fee', 10, 2)->default(0);
+            $table->string('schedule')->nullable();
             $table->boolean('is_active')->default(true);
             $table->boolean('is_featured')->default(false);
+            $table->string('image')->nullable();
             $table->integer('order')->default(0);
-            $table->json('social_links')->nullable();
             $table->json('meta')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['is_active', 'department']);
+            $table->index(['is_active', 'is_featured']);
         });
     }
 
@@ -40,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('language_programs');
     }
 };
