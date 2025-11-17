@@ -43,8 +43,13 @@ class ConsultationRequestController extends Controller
         $consultationRequest->load('visaService');
 
         // Send notification email to admin
-        $adminEmail = config('mail.admin_email', config('mail.from.address'));
-        Mail::to($adminEmail)->send(new ConsultationRequestSubmitted($consultationRequest));
+        try {
+            $adminEmail = config('mail.admin_email', config('mail.from.address'));
+            Mail::to($adminEmail)->send(new ConsultationRequestSubmitted($consultationRequest));
+        } catch (\Exception $e) {
+            // Log error but don't fail the request
+            logger()->error('Failed to send consultation request notification email: '.$e->getMessage());
+        }
 
         $redirectRoute = $consultationRequest->visa_service_id
             ? route('visa-services.show', $consultationRequest->visaService->slug)
