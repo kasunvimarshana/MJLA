@@ -17,7 +17,7 @@ class BlogPostFactory extends Factory
     public function definition(): array
     {
         $categories = ['general', 'cultural', 'academic', 'student-life'];
-        
+
         return [
             'title' => fake()->sentence(),
             'excerpt' => fake()->paragraph(),

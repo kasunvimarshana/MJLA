@@ -18,7 +18,7 @@ class GalleryItemFactory extends Factory
     {
         $types = ['image', 'video'];
         $categories = ['general', 'events', 'classrooms', 'cultural', 'students'];
-        
+
         return [
             'title' => fake()->sentence(),
             'description' => fake()->optional()->paragraph(),

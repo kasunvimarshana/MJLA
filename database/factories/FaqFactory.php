@@ -17,9 +17,9 @@ class FaqFactory extends Factory
     public function definition(): array
     {
         $categories = ['general', 'courses', 'visa', 'admission', 'fees'];
-        
+
         return [
-            'question' => fake()->sentence() . '?',
+            'question' => fake()->sentence().'?',
             'answer' => fake()->paragraphs(2, true),
             'category' => fake()->randomElement($categories),
             'is_published' => fake()->boolean(90),

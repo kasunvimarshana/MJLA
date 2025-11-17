@@ -18,7 +18,7 @@ class AdmissionFactory extends Factory
     {
         $statuses = ['pending', 'reviewing', 'approved', 'rejected', 'enrolled'];
         $levels = ['beginner', 'n5', 'n4', 'n3', 'n2', 'n1'];
-        
+
         return [
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),

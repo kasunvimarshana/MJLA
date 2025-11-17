@@ -48,7 +48,7 @@ class Admission extends Model
 
         static::creating(function ($admission) {
             if (empty($admission->reference_number)) {
-                $admission->reference_number = 'ADM-' . strtoupper(Str::random(8));
+                $admission->reference_number = 'ADM-'.strtoupper(Str::random(8));
             }
         });
     }

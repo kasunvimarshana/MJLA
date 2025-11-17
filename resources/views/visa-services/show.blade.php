@@ -51,12 +51,23 @@
         </div>
         @endif
 
-        <div class="bg-gray-100 rounded-lg p-6 mt-8">
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Ready to Apply?</h3>
-            <p class="text-gray-600 mb-4">Contact us today to start your visa application process.</p>
-            <a href="{{ route('contact.index') }}" class="inline-block px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700">
-                Contact Us
-            </a>
+        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-lg p-8 mt-8 shadow-md">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Ready to Apply?</h3>
+            <p class="text-gray-700 mb-6">Schedule a consultation with our visa experts to discuss your application process and requirements.</p>
+            <div class="flex gap-4">
+                <a href="{{ route('consultation-requests.create', $service->slug) }}" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transform transition hover:scale-105 shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    Request Consultation
+                </a>
+                <a href="{{ route('contact.index') }}" class="inline-flex items-center px-6 py-3 bg-white text-gray-700 font-semibold rounded-lg hover:bg-gray-50 border-2 border-gray-300 shadow">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Contact Us
+                </a>
+            </div>
         </div>
     </div>
 </div>

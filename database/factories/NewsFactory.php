@@ -19,7 +19,7 @@ class NewsFactory extends Factory
         $categories = ['news', 'event', 'announcement'];
         $types = ['article', 'event'];
         $type = fake()->randomElement($types);
-        
+
         return [
             'title' => fake()->sentence(),
             'excerpt' => fake()->paragraph(),

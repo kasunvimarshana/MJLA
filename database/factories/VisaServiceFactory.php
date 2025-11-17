@@ -17,9 +17,9 @@ class VisaServiceFactory extends Factory
     public function definition(): array
     {
         $categories = ['student', 'work', 'tourist', 'dependent'];
-        
+
         return [
-            'title' => fake()->words(3, true) . ' Visa Service',
+            'title' => fake()->words(3, true).' Visa Service',
             'description' => fake()->paragraphs(3, true),
             'requirements' => fake()->paragraphs(2, true),
             'process' => fake()->paragraphs(2, true),
