@@ -6,6 +6,7 @@ use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\VisaServiceController;
@@ -14,6 +15,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
+// Robots.txt
+Route::get('/robots.txt', function () {
+    $robotsTxt = "User-agent: *\n";
+    $robotsTxt .= "Allow: /\n";
+    $robotsTxt .= "Disallow: /admin\n";
+    $robotsTxt .= "Disallow: /api\n\n";
+    $robotsTxt .= 'Sitemap: '.url('/sitemap.xml')."\n";
+
+    return response($robotsTxt, 200)
+        ->header('Content-Type', 'text/plain');
+})->name('robots');
 
 // Locale switching
 Route::get('/locale/{locale}', [LocaleController::class, 'switch'])->name('locale.switch');
