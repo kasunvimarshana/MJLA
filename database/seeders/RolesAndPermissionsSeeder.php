@@ -22,67 +22,67 @@ class RolesAndPermissionsSeeder extends Seeder
             ['name' => 'courses.create', 'display_name' => 'Create Courses', 'description' => 'Can create new courses'],
             ['name' => 'courses.edit', 'display_name' => 'Edit Courses', 'description' => 'Can edit existing courses'],
             ['name' => 'courses.delete', 'display_name' => 'Delete Courses', 'description' => 'Can delete courses'],
-            
+
             // News permissions
             ['name' => 'news.view', 'display_name' => 'View News', 'description' => 'Can view news'],
             ['name' => 'news.create', 'display_name' => 'Create News', 'description' => 'Can create news'],
             ['name' => 'news.edit', 'display_name' => 'Edit News', 'description' => 'Can edit news'],
             ['name' => 'news.delete', 'display_name' => 'Delete News', 'description' => 'Can delete news'],
-            
+
             // Staff permissions
             ['name' => 'staff.view', 'display_name' => 'View Staff', 'description' => 'Can view staff'],
             ['name' => 'staff.create', 'display_name' => 'Create Staff', 'description' => 'Can create staff'],
             ['name' => 'staff.edit', 'display_name' => 'Edit Staff', 'description' => 'Can edit staff'],
             ['name' => 'staff.delete', 'display_name' => 'Delete Staff', 'description' => 'Can delete staff'],
-            
+
             // Blog permissions
             ['name' => 'blog.view', 'display_name' => 'View Blog Posts', 'description' => 'Can view blog posts'],
             ['name' => 'blog.create', 'display_name' => 'Create Blog Posts', 'description' => 'Can create blog posts'],
             ['name' => 'blog.edit', 'display_name' => 'Edit Blog Posts', 'description' => 'Can edit blog posts'],
             ['name' => 'blog.delete', 'display_name' => 'Delete Blog Posts', 'description' => 'Can delete blog posts'],
-            
+
             // Visa Service permissions
             ['name' => 'visa-services.view', 'display_name' => 'View Visa Services', 'description' => 'Can view visa services'],
             ['name' => 'visa-services.create', 'display_name' => 'Create Visa Services', 'description' => 'Can create visa services'],
             ['name' => 'visa-services.edit', 'display_name' => 'Edit Visa Services', 'description' => 'Can edit visa services'],
             ['name' => 'visa-services.delete', 'display_name' => 'Delete Visa Services', 'description' => 'Can delete visa services'],
-            
+
             // Gallery permissions
             ['name' => 'gallery.view', 'display_name' => 'View Gallery', 'description' => 'Can view gallery'],
             ['name' => 'gallery.create', 'display_name' => 'Create Gallery Items', 'description' => 'Can create gallery items'],
             ['name' => 'gallery.edit', 'display_name' => 'Edit Gallery Items', 'description' => 'Can edit gallery items'],
             ['name' => 'gallery.delete', 'display_name' => 'Delete Gallery Items', 'description' => 'Can delete gallery items'],
-            
+
             // Testimonial permissions
             ['name' => 'testimonials.view', 'display_name' => 'View Testimonials', 'description' => 'Can view testimonials'],
             ['name' => 'testimonials.create', 'display_name' => 'Create Testimonials', 'description' => 'Can create testimonials'],
             ['name' => 'testimonials.edit', 'display_name' => 'Edit Testimonials', 'description' => 'Can edit testimonials'],
             ['name' => 'testimonials.delete', 'display_name' => 'Delete Testimonials', 'description' => 'Can delete testimonials'],
-            
+
             // FAQ permissions
             ['name' => 'faqs.view', 'display_name' => 'View FAQs', 'description' => 'Can view FAQs'],
             ['name' => 'faqs.create', 'display_name' => 'Create FAQs', 'description' => 'Can create FAQs'],
             ['name' => 'faqs.edit', 'display_name' => 'Edit FAQs', 'description' => 'Can edit FAQs'],
             ['name' => 'faqs.delete', 'display_name' => 'Delete FAQs', 'description' => 'Can delete FAQs'],
-            
+
             // Admission permissions
             ['name' => 'admissions.view', 'display_name' => 'View Admissions', 'description' => 'Can view admissions'],
             ['name' => 'admissions.edit', 'display_name' => 'Edit Admissions', 'description' => 'Can edit admissions'],
             ['name' => 'admissions.delete', 'display_name' => 'Delete Admissions', 'description' => 'Can delete admissions'],
-            
+
             // Contact permissions
             ['name' => 'contacts.view', 'display_name' => 'View Contacts', 'description' => 'Can view contact submissions'],
             ['name' => 'contacts.delete', 'display_name' => 'Delete Contacts', 'description' => 'Can delete contact submissions'],
-            
+
             // User management permissions
             ['name' => 'users.view', 'display_name' => 'View Users', 'description' => 'Can view users'],
             ['name' => 'users.create', 'display_name' => 'Create Users', 'description' => 'Can create users'],
             ['name' => 'users.edit', 'display_name' => 'Edit Users', 'description' => 'Can edit users'],
             ['name' => 'users.delete', 'display_name' => 'Delete Users', 'description' => 'Can delete users'],
-            
+
             // Role and Permission management
             ['name' => 'roles.manage', 'display_name' => 'Manage Roles', 'description' => 'Can manage roles and permissions'],
-            
+
             // Dashboard
             ['name' => 'dashboard.access', 'display_name' => 'Access Dashboard', 'description' => 'Can access admin dashboard'],
         ];
@@ -173,4 +173,3 @@ class RolesAndPermissionsSeeder extends Seeder
         $this->command->warn('Please change the password after first login!');
     }
 }
-

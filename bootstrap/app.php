@@ -21,7 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\SetLocale::class,
             \App\Http\Middleware\SecurityHeadersMiddleware::class,
         ]);
-        
+
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
             'permission' => \App\Http\Middleware\PermissionMiddleware::class,

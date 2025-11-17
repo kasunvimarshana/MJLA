@@ -7,7 +7,6 @@ use App\Http\Requests\Course\StoreCourseRequest;
 use App\Http\Requests\Course\UpdateCourseRequest;
 use App\Models\Course;
 use App\Services\CourseService;
-use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
@@ -24,6 +23,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::latest()->paginate(15);
+
         return view('admin.courses.index', compact('courses'));
     }
 
@@ -79,4 +79,3 @@ class CourseController extends Controller
             ->with('success', 'Course deleted successfully.');
     }
 }
-
